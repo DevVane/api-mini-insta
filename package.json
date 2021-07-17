@@ -1,0 +1,31 @@
+{
+  "name": "api-mini-insta",
+  "version": "1.0.0",
+  "description": "- Logar\r - Se cadastrar\r - Ver seu perfil/informações\r - Editar seus dados\r - Ver postagens dos outros\r     - Ver quantidade de curtidas numa postagem\r     - Ver comentários\r - Curtir postagens de outros\r - Comentar postagens",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevVane/api-mini-insta.git"
+  },
+  "keywords": [],
+  "author": "Dev Vane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevVane/api-mini-insta/issues"
+  },
+  "homepage": "https://github.com/DevVane/api-mini-insta#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.7",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
