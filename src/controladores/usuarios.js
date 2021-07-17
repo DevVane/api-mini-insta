@@ -100,9 +100,9 @@ async function atualizarPerfil(req, res){
 
             });
 
-            if(usuarioAtualizado){
-                return res.status(400).json('O usuário não foi atualizado');
-            }
+        if(!usuarioAtualizado){
+            return res.status(400).json('O usuário não foi atualizado');
+        }
 
         return res.status(200).json('O usuário foi atualizado com sucesso.');
     } catch (error) {
