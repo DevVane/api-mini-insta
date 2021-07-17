@@ -72,8 +72,43 @@ async function curtirPostagem(req, res){
     }
 }
 
+async function comentarPostagem(req, res){
+    const { id } = req.usuario;
+    const { postagemId } = req.params;
+    const { texto } = req.body;
+
+    if(!texto) {
+        return res.status(400).json('Para comentar é necessário informar o texto');
+    }
+
+    try {
+        const postagem = await knex('postagens').where({ id: postagemId}).first();
+        
+        if(!postagem) {
+            return res.status(404).json('Postagem não encontrada');
+        }
+
+        const comentario= await knex('postagem_comentarios')
+            .insert({
+                usuario_id: id, 
+                postagem_id: postagem.id,
+                texto
+            });
+
+        if(!comentario) {
+            return res.status(400).json('Não foi possível comentar essa postagem');
+        }
+
+        return res.status(200).json('Postagem comentada com sucesso');
+
+    } catch (error) {
+       return res.status(400).json(error.message); 
+    }
+}
+
 module.exports = {
     obterPostagem,
     cadastrarPostagem,
-    curtirPostagem
+    curtirPostagem,
+    comentarPostagem
 }
