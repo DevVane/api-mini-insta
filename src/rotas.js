@@ -20,7 +20,7 @@ rotas.get('/perfil', usuarios.obterPerfil);
 rotas.put('/perfil', usuarios.atualizarPerfil);
 
 //postagens
-rotas.get('/postagens', postagens.obterPostagem);
+rotas.get('/postagens', postagens.obterPostagens);
 rotas.post('/postagens', postagens.cadastrarPostagem);
 rotas.post('/postagens/:postagemId/curtir', postagens.curtirPostagem);
 rotas.post('/postagens/:postagemId/comentar', postagens.comentarPostagem);
